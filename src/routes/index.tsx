@@ -1,24 +1,61 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero, QuestionSection, BookOverview, Scoreboard } from "@/components/sections/Opening";
+import { Masks, JosephStory, Journey, QuietSpace, Freedom } from "@/components/sections/Story";
+import { Author, Legacy, Praise, BuySection, Newsletter, Footer } from "@/components/sections/Closing";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Am I Enough? | Joseph Estes";
+const description =
+  "Explore Am I Enough? by Joseph Estes, a reflective journey through identity, achievement, faith, purpose, worth and the freedom to become who you were created to be.";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "Am I Enough?",
+  isbn: "978-1-963452-00-0",
+  author: { "@type": "Person", name: "Joseph Estes" },
+  publisher: { "@type": "Organization", name: "Collingwood Press" },
+};
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "book" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(schema) }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-gold focus:px-4 focus:py-2 focus:text-ink">Skip to content</a>
+      <Navbar />
+      <main id="main">
+        <Hero />
+        <QuestionSection />
+        <BookOverview />
+        <Scoreboard />
+        <Masks />
+        <JosephStory />
+        <Journey />
+        <QuietSpace />
+        <Freedom />
+        <Author />
+        <Legacy />
+        <Praise />
+        <BuySection />
+        <Newsletter />
+      </main>
+      <Footer />
+    </>
   );
 }
