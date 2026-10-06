@@ -142,7 +142,7 @@ function Metric({ label, i, progress, reduce }: { label: string; i: number; prog
   const opacity = useTransform(progress, [start, start + 0.25], [1, 0.22]);
   const strike = useTransform(progress, [start, start + 0.2], ["0%", "100%"]);
   return (
-    <motion.li style={reduce ? undefined : { opacity }} className="relative font-display text-3xl text-slate sm:text-5xl">
+    <motion.li style={reduce ? {} : { opacity }} className="relative font-display text-3xl text-slate sm:text-5xl">
       {label}
       <motion.span aria-hidden style={{ width: reduce ? "100%" : strike }} className="absolute left-0 top-1/2 h-px bg-ink/70" />
     </motion.li>
