@@ -8,7 +8,7 @@ import { FadeIn, RevealText, Stagger, StaggerItem } from "../motion";
 export function Hero() {
   return (
     <section id="home" className="relative flex min-h-[92svh] items-center overflow-hidden bg-navy text-cream">
-      <img src={hero} alt="" aria-hidden width={910} height={822} className="absolute inset-0 h-full w-full object-cover object-[60%_center] animate-drift" />
+      <img src={hero} alt="" aria-hidden width={910} height={610} className="absolute inset-0 h-full w-full object-cover object-[60%_center] animate-drift" />
       <div aria-hidden className="absolute bottom-[18%] right-[22%] h-64 w-64 rounded-full bg-amber/40 blur-3xl animate-shimmer" />
       <div aria-hidden className="absolute inset-0 bg-veil" />
       <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy to-transparent" />

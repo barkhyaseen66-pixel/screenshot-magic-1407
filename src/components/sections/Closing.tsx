@@ -83,7 +83,7 @@ const retailers = ["Amazon", "Barnes & Noble", "Publisher", "Independent Booksto
 export function BuySection() {
   return (
     <section id="buy" className="relative overflow-hidden bg-navy px-6 py-28 text-cream lg:py-40">
-      <img src={hero} alt="" aria-hidden loading="lazy" width={910} height={822} className="absolute inset-0 h-full w-full object-cover opacity-50" />
+      <img src={hero} alt="" aria-hidden loading="lazy" width={910} height={610} className="absolute inset-0 h-full w-full object-cover opacity-50" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/30" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
